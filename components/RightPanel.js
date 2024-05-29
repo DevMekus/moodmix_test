@@ -1,10 +1,13 @@
-import React from "react";
+import ArtistCard from "@/components/ArtistCard";
 
 const RightPanel = () => {
   return (
     <>
       <div className="right-panel">
-        <h1>RightPanel</h1>
+        <h5 className="bold">Artists</h5>
+        <div className="display">
+          <ArtistCard />
+        </div>
       </div>
     </>
   );

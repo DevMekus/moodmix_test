@@ -11,23 +11,34 @@ import musicData from "@/lib/musics";
 import playlistData from "@/lib/playlists";
 import { setMusicPlay } from "@/lib/library";
 import { useState } from "react";
-import { homeUrl } from "@/lib/navigations";
+import { dashUrl } from "@/lib/navigations";
 
 const page = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  function handlePlayClicked(isPlaying) {
+    setIsPlaying(!isPlaying);
+  }
 
   return (
     <>
       <TopNav />
       <main className="main-container">
-        <Sidebar links={homeUrl} />
+        <Sidebar links={dashUrl} />
         <div className="app-inner-flex">
           <div className="app-inner">
-            <Hero />
             <div className="home-page-flex">
               <div className="content-list padding-20">
-                <h4 className="bold">What’s New</h4>
-                <div className="album-display">
+                <div className="flex gap-10 align-center">
+                  <h3>Find your Favourite</h3>
+                  <select className="mood-filter">
+                    <option>All songs</option>
+                    <option>Happy</option>
+                    <option>Sad</option>
+                    <option>Excited</option>
+                    <option>Pondering</option>
+                  </select>
+                </div>
+                <div className="album-display mt-30">
                   {musicData.map((music) => (
                     <div key={music.id}>
                       <AlbumCard data={music} />
@@ -36,7 +47,7 @@ const page = () => {
                 </div>
 
                 <section className="playlist-chart">
-                  <h4 className="bold">Album & Playlists</h4>
+                  <h3>Album & Playlists</h3>
                   <div className="playlist-flex mt-30">
                     {playlistData.map((playlist) => (
                       <div key={playlist.id}>
@@ -52,7 +63,7 @@ const page = () => {
             </div>
           </div>
         </div>
-        {/* <PlayerBar /> */}
+        {isPlaying && <PlayerBar />}
       </main>
     </>
   );

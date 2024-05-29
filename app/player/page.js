@@ -2,10 +2,10 @@
 import React from "react";
 import TopNav from "@/components/TopNav";
 import Sidebar from "@/components/Sidebar";
-import PlayerBar from "@/components/PlayerBar";
+import AudioPlayer from "@/components/AudioPlayer";
 import RightPanel from "@/components/RightPanel";
 import PlaylistCard from "@/components/PlaylistCard";
-import Hero from "@/components/Hero";
+import PlayerBar from "@/components/PlayerBar";
 import AlbumCard from "@/components/AlbumCard";
 import musicData from "@/lib/musics";
 import playlistData from "@/lib/playlists";
@@ -23,10 +23,13 @@ const page = () => {
         <Sidebar links={homeUrl} />
         <div className="app-inner-flex">
           <div className="app-inner">
-            <Hero />
+            <div className="player-window">
+              <h5>Now Playing...</h5>
+              <AudioPlayer />
+            </div>
             <div className="home-page-flex">
               <div className="content-list padding-20">
-                <h4 className="bold">What’s New</h4>
+                <h4 className="bold">Also By Shania Twain</h4>
                 <div className="album-display">
                   {musicData.map((music) => (
                     <div key={music.id}>
@@ -34,25 +37,12 @@ const page = () => {
                     </div>
                   ))}
                 </div>
-
-                <section className="playlist-chart">
-                  <h4 className="bold">Album & Playlists</h4>
-                  <div className="playlist-flex mt-30">
-                    {playlistData.map((playlist) => (
-                      <div key={playlist.id}>
-                        <PlaylistCard data={playlist} />
-                      </div>
-                    ))}
-                  </div>
-                </section>
               </div>
-              <div className="right-panels">
-                <RightPanel />
-              </div>
+              <div className="right-panels">{/* <RightPanel /> */}</div>
             </div>
           </div>
         </div>
-        {/* <PlayerBar /> */}
+        <PlayerBar />
       </main>
     </>
   );

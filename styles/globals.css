@@ -10,8 +10,13 @@
 
 :root{
     --black: #262626;
-    --green:#81B441;
+    --green:#08DC0C;
     --blue: #0866FF;
+}
+
+.f-width{
+    position: relative;
+    width: 100%;
 }
 
 .color-grey{
@@ -83,4 +88,160 @@ h6 {
 
 .padding-20{
     padding: 20px;
+}
+
+.bt{
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .30s ease-in-out;
+    border: none;
+    outline: none;
+    opacity: .8;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.bt-success{
+    background-color: green;
+    color: white;   
+}
+
+.bt:hover{
+    opacity: 1;
+}
+
+.bt .icon{
+    margin-right: 10px;
+}
+
+.bt-fw{
+    width: 100%;
+}
+
+.anim-btn{
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+
+.anim-btn:after {
+    content: "";
+    background: var(--black);
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+  
+.anim-btn:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+}
+
+.default-btn{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;   
+    cursor: pointer;  
+    outline: none;
+    border: none;
+}
+
+.bt-pill{
+    border-radius: 20px;
+}
+
+.flex{
+    display: flex;
+} 
+
+.space-between{
+    justify-content: space-between;
+} 
+
+.align-center{
+    align-items: center;
+}
+
+.mt-10{
+    margin-top: 10px;
+}
+
+.mr-10{
+    margin-right: 10px;
+}
+
+.gap-10{
+    gap: 10px;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.play-wrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--black);
+    background-color: white;
+}
+
+.play-wrap:hover{
+    border: 3px solid var(--black); 
+    color: var(--green);  
+}
+
+/**Play Button Sizes **/
+
+.mini-play{
+    width: 45px;
+    height: 45px;
+}
+
+.medium-play{
+    width: 80px;
+    height: 80px;
+}
+
+.medium-play .icon{
+    font-size: 40px;
+}
+
+.play-circle{
+    border-radius: 100%;
+}
+
+.no-decoration{
+    text-decoration: none;
+    color: inherit;
+}
+
+.mood-filter{
+    min-width: 250px;
+    padding: 10px;
+    border: 2px solid var(--black);
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.icon-sm{
+    font-size: 14px;
+}
+
+.hidden{
+    display: none;
 }

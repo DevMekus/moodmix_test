@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 
-const TopNav = () => {
+const SecureTop = () => {
   return (
     <>
       <div className="top-nav">
@@ -25,18 +25,9 @@ const TopNav = () => {
             <input type="search" placeholder="Search music..." />
           </div>
           <div className="flex gap-10">
-            <Link
-              href="/Oauth/signup"
-              className="bt bt-success anim-btn default-btn"
-            >
-              Create account
-            </Link>
-            <Link
-              href="/Oauth/login"
-              className="bt bt-success anim-btn default-btn"
-            >
-              Login
-            </Link>
+            <button className="btn btn-sm btn-danger">
+              <i class="fas fa-power-off" aria-hidden="true"></i> Logout
+            </button>
           </div>
         </div>
       </div>
@@ -44,4 +35,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default SecureTop;
